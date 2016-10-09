@@ -12,7 +12,7 @@ _jpush.set_logging("DEBUG")
 
 class TestEntity(unittest.TestCase):
     def test_create_device(self):
-        reg_id = '1507bfd3f7c466c355c'
+        reg_id = '160a3797c80d93ce897'
         entity = jpush.device_tag(jpush.add("ddd", "tageee"))
         result = device.set_devicemobile(reg_id, entity)
         self.assertEqual(result.status_code, 200)
@@ -24,7 +24,7 @@ class TestEntity(unittest.TestCase):
         self.assertEqual(result.status_code, 200)
 
     def test_clear_tag(self):
-        reg_id = '090c1f59f89'
+        reg_id = '160a3797c80d93ce897'
         entity = jpush.device_tag("")
         try:
             device.set_deviceinfo(reg_id, entity)
@@ -34,7 +34,7 @@ class TestEntity(unittest.TestCase):
             self.assertEqual(1, 0)
 
     def test_get_device(self):
-        reg_id = '090c1f59f89'
+        reg_id = '160a3797c80d93ce897'
         try:
             device.get_deviceinfo(reg_id)
         except common.JPushFailure:
@@ -71,13 +71,13 @@ class TestEntity(unittest.TestCase):
         self.assertEqual(result.status_code, 200)
 
     def test_set_device_mobile(self):
-        reg_id = '1507bfd3f7c466c355c'
+        reg_id = '160a3797c80d93ce897'
         entity = jpush.device_tag(jpush.add("ddd", "tageee"))
         result = device.set_devicemobile(reg_id, entity)
         self.assertEqual(result.status_code, 200)
 
     def test_device_mobile(self):
-        reg_id = '1507bfd3f7c466c355c'
+        reg_id = '160a3797c80d93ce897'
         entity = jpush.device_mobile("18588232140")
         result = device.set_devicemobile(reg_id, entity)
         self.assertEqual(result.status_code, 200)

@@ -36,6 +36,8 @@ class JPush(object):
 
         response = conn.request(method,url,headers=headers,body=body)
         resp = conn.get_response(response)
+        #add status_code to test
+        resp.status_code=resp.status
         logger.debug(resp.status)
         logger.debug(resp.read())
         return resp
