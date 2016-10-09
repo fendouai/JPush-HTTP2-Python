@@ -75,7 +75,7 @@ class Device(object):
         body = None
         if platform:
             body = platform
-        info = self._jpush._request('POST', body, url, base_url=common.DEVICE_BASEURL)
+        info = self._jpush._request('DELETE', body, url, base_url=common.DEVICE_BASEURL)
         return info
 
     def update_tagusers(self, tag, entity):
@@ -101,7 +101,7 @@ class Device(object):
         body = None
         if platform:
             body = platform
-        info = self._jpush._request('POST', body, url, base_url=common.DEVICE_BASEURL)
+        info = self._jpush._request('DELETE', body, url, base_url=common.DEVICE_BASEURL)
         return info
 
     def get_aliasuser(self, alias, platform=None):
