@@ -5,4 +5,4 @@ _jpush.set_logging("DEBUG")
 device = _jpush.create_device()
 tag = "ddd"
 reg_id = '160a3797c80d93ce897'
-device.check_taguserexist(tag, registration_id)
+device.check_taguserexist(tag, reg_id)
