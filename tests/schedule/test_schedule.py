@@ -30,12 +30,12 @@ class TestEntity(unittest.TestCase):
         self.assertEqual(result.status_code, 200)
 
     def test_get_schedule_by_id(self):
-        result = schedule.get_schedule_by_id("3fc6e2fa-15a6-11e6-83d4-0021f653c902")
+        result = schedule.get_schedule_by_id("a7d5ceea-8e98-11e6-8ea0-0021f652c102")
         self.assertEqual(result.status_code, 200)
 
     def test_get_schedule_by_invalid_id(self):
         try:
-            result = schedule.get_schedule_by_id("3fc6e2fa-15a6-11e6-83d4-0021f653c222")
+            result = schedule.get_schedule_by_id("3fc6e2fa-15a6-11e6-03d4-0021f653c222")
             self.assertNotEqual(result.status_code, 200)
         except common.JPushFailure as e:
             self.assertIsInstance(e, common.JPushFailure)
@@ -67,7 +67,7 @@ class TestEntity(unittest.TestCase):
 
     def test_delete_schedule(self):
         try:
-            result = schedule.delete_schedule("e9c553d0-0850-11e6-b6d4-0021f652c102")
+            result = schedule.delete_schedule("59272e6a-8e98-11e6-85a9-0021f653c902")
             self.assertNotEqual(result.status_code, 200)
         except common.JPushFailure as e:
             self.assertIsInstance(e, jpush.common.JPushFailure)
