@@ -91,7 +91,7 @@ class Device(object):
         """
         url = common.TAG_URL + tag + "/registration_ids/" + registration_id
         body = registration_id
-        info = self._jpush._request('POST', body, url, base_url=common.DEVICE_BASEURL)
+        info = self._jpush._request('GET', body, url, base_url=common.DEVICE_BASEURL)
         return info
 
     def delete_alias(self, alias, platform=None):

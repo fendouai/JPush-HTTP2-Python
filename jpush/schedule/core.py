@@ -19,13 +19,13 @@ class Schedule(object):
     def post_schedule(self, schedulepayload):
         url=common.BASE_SCHEDULEURL
         body = json.dumps(schedulepayload)
-        result = self.send("POST", body, url, common.REPORT_BASEURL)
+        result = self.send("POST", body, url)
         return result
 
     def get_schedule_by_id(self, schedule_id):
         url=common.BASE_SCHEDULEURL + schedule_id
         body = None
-        result = self.send("GET", body, url,common.REPORT_BASEURL)
+        result = self.send("GET", body, url)
         return result
 
     def get_schedule_list(self, page_id):
@@ -34,19 +34,19 @@ class Schedule(object):
         else:
             url = common.BASE_LISTURL
         body = None
-        result = self.send("GET",body,url, common.REPORT_BASEURL)
+        result = self.send("GET",body,url)
         return result
 
     def put_schedule(self, schedulepayload, schedule_id):
         url = common.BASE_SCHEDULEURL + schedule_id
         body = json.dumps(schedulepayload)
-        result = self.send("PUT", url, body)
+        result = self.send("PUT", body,url)
         return result
 
     def delete_schedule(self,schedule_id):
         url = common.BASE_SCHEDULEURL + schedule_id
         body = None
-        result = self.send("DELETE", url, body)
+        result = self.send("DELETE",body,url)
         return result
 
 
