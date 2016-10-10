@@ -16,7 +16,6 @@ _jpush.set_logging("DEBUG")
 def test_create_device():
     reg_id = '160a3797c80d93ce897'
     entity = jpush.device_tag(jpush.add("ddd", "tageee"))
-    entity = json.dumps(entity)
     result = device.set_devicemobile(reg_id, entity)
     assert result.status_code==200
 
@@ -57,7 +56,6 @@ def test_tag_list():
 def test_update_tagusers():
     tag = "ddd"
     entity = jpush.device_regid(jpush.add("090c1f59f89"))
-    entity=json.dumps(entity)
     result = device.update_tagusers(tag, entity)
     assert result.status_code == 200
 
@@ -65,7 +63,6 @@ def test_update_tagusers():
 def test_set_device_mobile():
     reg_id = '160a3797c80d93ce897'
     entity = jpush.device_tag(jpush.add("ddd", "tageee"))
-    entity = json.dumps(entity)
     result = device.set_devicemobile(reg_id, entity)
     assert result.status_code == 200
 
@@ -73,7 +70,6 @@ def test_set_device_mobile():
 def test_device_mobile():
     reg_id = '160a3797c80d93ce897'
     entity = jpush.device_mobile("18588232140")
-    entity = json.dumps(entity)
     result = device.set_devicemobile(reg_id, entity)
     assert result.status_code == 200
 
