@@ -2,6 +2,7 @@
 
 ## 概述
 这是 JPush REST API 的 Python 版本封装开发包，依赖 Hyper: HTTP/2 Client for Python。
+
 Hyper: https://github.com/Lukasa/hyper
 
 对应的 REST API 文档：<http://docs.jpush.io/server/rest_api_v3_push/>
