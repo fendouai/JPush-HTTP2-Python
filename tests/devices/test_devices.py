@@ -74,12 +74,12 @@ class TestEntity(unittest.TestCase):
 
     def test_set_device_mobile(self):
         reg_id = '160a3797c80d93ce897'
-        entity = jpush.device_tag(jpush.add("ddd", "tageee"))
+        entity = jpush.device_tag(jpush.add("ddd", "tag"))
         result = device.set_devicemobile(reg_id, entity)
         self.assertEqual(result.status_code, 200)
 
     def test_device_mobile(self):
         reg_id = '160a3797c80d93ce897'
-        entity = jpush.device_mobile("18588232140")
+        entity = jpush.device_mobile("18588888888")
         result = device.set_devicemobile(reg_id, entity)
         self.assertEqual(result.status_code, 200)

@@ -17,7 +17,7 @@ push=push.payload
 
 class TestEntity(unittest.TestCase):
     def test_post_schedule(self):
-        trigger = jpush.schedulepayload.trigger("2017-07-17 12:00:00")
+        trigger = jpush.schedulepayload.trigger("2016-12-17 12:00:00")
         schedulepayload = jpush.schedulepayload.schedulepayload("name", True, trigger, push)
         result = schedule.post_schedule(schedulepayload)
         self.assertEqual(result.status_code, 200)
