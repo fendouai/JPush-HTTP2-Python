@@ -7,7 +7,9 @@ import jpush as jpush
 
 _jpush = jpush.JPush(app_key, master_secret)
 device = _jpush.create_device()
-_jpush.set_logging("DEBUG")
+import logging
+
+logging.basicConfig(level=logging.DEBUG,filename='myapp.log',filemode='w')
 
 
 class TestEntity(unittest.TestCase):
@@ -56,7 +58,7 @@ class TestEntity(unittest.TestCase):
 
     def test_tag_exist(self):
         tag = "ddd"
-        registration_id = '090c1f59f89'
+        registration_id = '160a3797c80d93ce897'
         result = device.check_taguserexist(tag, registration_id)
         self.assertEqual(result.status_code, 200)
 
@@ -66,7 +68,7 @@ class TestEntity(unittest.TestCase):
 
     def test_update_tagusers(self):
         tag = "ddd"
-        entity = jpush.device_regid(jpush.add("090c1f59f89"))
+        entity = jpush.device_regid(jpush.add("160a3797c80d93ce897"))
         result = device.update_tagusers(tag, entity)
         self.assertEqual(result.status_code, 200)
 
